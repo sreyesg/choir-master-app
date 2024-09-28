@@ -27,7 +27,7 @@ mongoose.connection.on('connected', () => {
 // =============== routes =================== //
 
 app.get('/', (req, res) => {
-    res.send('Welcome to home')
+    res.render('index.ejs')
 })
 
 
