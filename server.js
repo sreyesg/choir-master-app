@@ -10,6 +10,7 @@ const isSignedIn = require('./middleware/is-signed-in.js')
 
 // =============== require controllers =================== //
 const authController = require('./controllers/auth.js')
+const repertoireController = require('./controllers/repertoire.js')
 const passUserToView = require('./middleware/pass-user-to-view.js')
 
 
@@ -38,6 +39,7 @@ app.get('/', (req, res) => {
 })
 app.use('/auth', authController)
 app.use(isSignedIn)
+app.use('/users/:userId/repertoire', repertoireController)
 
 
 // =============== app listener =================== //
