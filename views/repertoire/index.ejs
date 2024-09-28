@@ -3,11 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>My Repertoire</title>
 </head>
 <body>
+    <%- include('../partials/navbar.ejs')%>
     <main>
         <h1>My Repertoire</h1>
+        <%repertoire.forEach((song) => {%>
+            <ul>
+                <li><%= song.title %></li>
+            </ul>
+        <%})%>
+        
+        
+        
+        
+        
         <a href="/users/<%= user._id %>/repertoire/new">Add Song</a>
     </main>
     
