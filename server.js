@@ -7,7 +7,7 @@ const morgan = require('morgan')
 const methodOverride = require('method-override')
 
 // =============== require controllers =================== //
-
+const authController = require('./controllers/auth.js')
 
 
 // =============== Database Connection =================== //
@@ -17,9 +17,8 @@ mongoose.connection.on('connected', () => {
 })
 
 // =============== middleware =================== //
-
-
-
+app.use(morgan('dev'))
+app.use(express.urlencoded({extended: false}))
 
 
 
@@ -29,7 +28,7 @@ mongoose.connection.on('connected', () => {
 app.get('/', (req, res) => {
     res.render('index.ejs')
 })
-
+app.use('/auth', authController)
 
 
 // =============== app listener =================== //
