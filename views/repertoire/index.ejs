@@ -11,7 +11,9 @@
         <h1>My Repertoire</h1>
         <%repertoire.forEach((song) => {%>
             <ul>
-                <li><%= song.title %></li>
+                <li>
+                    <a href="/users/<%= user._id %>/repertoire/<%= song._id %>"> <%= song.title %> </a>
+                </li>
             </ul>
         <%})%>
         

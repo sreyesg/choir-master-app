@@ -23,12 +23,29 @@ router.get('/new', (req, res) => {
 })
 // ============ Create repertoire ========= //
 router.post('/', async(req, res) => {
-    console.log(req.body)
-    const currentUser = await User.findById(req.session.user._id)
-    currentUser.repertoire.push(req.body)
-    currentUser.save()
-    res.redirect(`/users/${req.session.user._id}/repertoire`)
+    try {
+        
+        const currentUser = await User.findById(req.session.user._id)
+        currentUser.repertoire.push(req.body)
+        currentUser.save()
+        res.redirect(`/users/${req.session.user._id}/repertoire`)
+
+    }catch (error) {
+        console.log(error)
+        res.redirect('/')
+    }
 })
+
+// =========== render show page ============== //
+router.get('/:songId', async(req,res) => {
+    const currentUser = await User.findById(req.session.user._id)
+    const song = currentUser.repertoire.id(req.params.songId)
+    res.render('repertoire/show.ejs', {
+        song, 
+    })
+})
+
+
 
 
 
@@ -40,7 +57,6 @@ router.post('/', async(req, res) => {
 
 
 
-// =========== render show page ============== //
 
 
 
