@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Song</title>
+</head>
+<body>
+    <%- include('../partials/navbar.ejs') %>
+    <main>
+        <form action="/users/<%= user._id %>/repertoire" method="POST">
+           <label for="title">Title</label> 
+           <input type="text" name="title" id="title">
+           <label for="category">Category</label>
+           <select name="category" id="category">
+                <option value="entrance">Entrance</option>
+                <option value="offertory">Offertory</option>
+                <option value="communion">Communion</option>
+                <option value="exit">Exit</option>
+           </select>
+           
+           <label for="songBook">SongBook</label>
+           <input type="text" name="songBook" id="songBook">
+           <label for="page">Page Number</label>
+           <input type="number" name="page" id="page">
+           <button type="submit">Create Song</button>
+        </form>
+    </main>
+</body>
+</html>
