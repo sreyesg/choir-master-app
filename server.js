@@ -5,6 +5,7 @@ const app = express()
 const mongoose = require('mongoose')
 const morgan = require('morgan')
 const methodOverride = require('method-override')
+const session = require('express-session')
 
 // =============== require controllers =================== //
 const authController = require('./controllers/auth.js')
@@ -19,7 +20,12 @@ mongoose.connection.on('connected', () => {
 // =============== middleware =================== //
 app.use(morgan('dev'))
 app.use(express.urlencoded({extended: false}))
-
+app.use(session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: true,
+    
+}))
 
 
 
