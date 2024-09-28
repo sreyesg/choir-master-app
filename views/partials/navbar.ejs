@@ -1,12 +1,12 @@
 <nav>
     <%if(user) {%>
-        <a href="">My Repertoire</a>    
-        <a href="">Checkout our Community</a>    
-        <a href="">sign-out</a>    
+        <a href="/users/<%= user._id %>/repertoire">My Repertoire</a>    
+        <a href="/community">Checkout our Community</a>    
+        <a href="/auth/sign-out">sign-out</a>    
     
     <%} else {%>
-        <a href="">sign-in</a>    
-        <a href="">sign-up</a>    
+        <a href="/auth/sign-in">sign-in</a>    
+        <a href="/auth/sign-up">sign-up</a>    
         
     <%}%>
 </nav>

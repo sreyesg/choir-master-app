@@ -3,11 +3,21 @@ const router = express.Router()
 const bcrypt = require('bcrypt')
 const User = require('../models/user')
 
-// ======== render sign-up form =========// 
+// ======== render forms =========// 
 router.get('/sign-up', (req, res) => {
     res.render('auth/sign-up.ejs')
 })
-// ========= Create user ============== //
+
+router.get('/sign-in', (req, res) => {
+    res.render('auth/sign-in.ejs')
+})
+
+router.get('/sign-out',(req, res) => {
+    req.session.destroy()
+    res.redirect('/')
+})
+
+// ================= Create user ============== //
 router.post('/sign-up',async (req, res) => {
     const userInDatabase = await User.findOne({username: req.body.username})
     if (userInDatabase){
@@ -19,15 +29,12 @@ router.post('/sign-up',async (req, res) => {
     const hashedPassowrd = bcrypt.hashSync(req.body.password, 10)
     req.body.password = hashedPassowrd
     await User.create(req.body)
-    return res.send('new user created')
+    return res.send('/auth/sign-in')
 })
 
-// ======== render sign-up form =========// 
 
-router.get('/sign-in', (req, res) => {
-    res.render('auth/sign-in.ejs')
-})
-// ========== sign-in user =============== //
+
+// ================ sign-in user =============== //
 router.post('/sign-in', async(req, res) => {
     const userInDatabase = await User.findOne({username: req.body.username})
     
