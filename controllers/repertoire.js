@@ -27,7 +27,7 @@ router.post('/', async(req, res) => {
         
         const currentUser = await User.findById(req.session.user._id)
         currentUser.repertoire.push(req.body)
-        currentUser.save()
+        await currentUser.save()
         res.redirect(`/users/${req.session.user._id}/repertoire`)
 
     }catch (error) {
@@ -58,7 +58,20 @@ router.get('/:songId/edit', async(req, res) => {
         res.redirect('/')
     } 
 })
-
+// ======================= edit action ================ //
+router.put('/:songId', async(req, res) => {
+    try {
+        const currentUser = await User.findById(req.session.user._id)
+        const song = currentUser.repertoire.id(req.params.songId)
+        song.set(req.body)
+        await currentUser.save()
+        res.redirect(`/users/${req.session.user._id}/repertoire`)
+        
+    } catch (error) {
+        console.log(error)
+        res.redirect('/')
+    }
+})
 
 
 
