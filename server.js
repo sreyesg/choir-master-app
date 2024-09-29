@@ -6,12 +6,13 @@ const mongoose = require('mongoose')
 const morgan = require('morgan')
 const methodOverride = require('method-override')
 const session = require('express-session')
-const isSignedIn = require('./middleware/is-signed-in.js')
+const path = require('path')
 
 // =============== require controllers =================== //
 const authController = require('./controllers/auth.js')
 const repertoireController = require('./controllers/repertoire.js')
 const passUserToView = require('./middleware/pass-user-to-view.js')
+const isSignedIn = require('./middleware/is-signed-in.js')
 
 
 // =============== Database Connection =================== //
@@ -24,6 +25,7 @@ mongoose.connection.on('connected', () => {
 app.use(morgan('dev'))
 app.use(express.urlencoded({extended: false}))
 app.use(methodOverride('_method'))
+app.use(express.static(path.join(__dirname,'public')))
 app.use(session({
     secret: process.env.SESSION_SECRET,
     resave: false,

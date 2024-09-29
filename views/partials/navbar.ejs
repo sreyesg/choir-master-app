@@ -1,12 +1,25 @@
+<link rel="stylesheet" href="/stylesheets/partials.css">
 <nav>
     <%if(user) {%>
-        <a href="/users/<%= user._id %>/repertoire">My Repertoire</a>    
-        <a href="/community">Checkout our Community</a>    
-        <a href="/auth/sign-out">sign-out</a>    
+        <div class="navbar">
+            <h1 class="nav-header">Choir Master</h1>
+            <div class="nav-links">
+                <a href="/users/<%= user._id %>/repertoire">My Repertoire</a>    
+                <a href="/community">Checkout our Community</a>    
+                <a href="/auth/sign-out">sign-out</a>    
+
+            </div>
+        </div>
     
     <%} else {%>
-        <a href="/auth/sign-in">sign-in</a>    
-        <a href="/auth/sign-up">sign-up</a>    
+        <div class="navbar">
+            <h1 id="nav-header">Choir Master</h1>
+            
+            <div class="nav-link">
+                <a href="/auth/sign-in">sign-in</a>    
+                <a href="/auth/sign-up">sign-up</a>    
+            </div>
+        </div>
         
     <%}%>
 </nav>
