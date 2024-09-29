@@ -8,7 +8,7 @@
 <body>
     <%- include('../partials/navbar.ejs') %>
     <main>
-        <form action="/users/<%= user._id %>/repertoire" method="POST">
+        <form action="/users/<%= user._id %>/repertoire/<%= song._id %>?_method=PUT" method="POST">
            <label for="title" >Title</label> 
            <input type="text" name="title" id="title" value="<%=song.title %>">
            <label for="category">Category</label>
@@ -40,7 +40,7 @@
            <input type="text" name="songBook" id="songBook" value="<%=song.songBook %>">
            <label for="page">Page Number</label>
            <input type="number" name="page" id="page" value="<%=song.page %>">
-           <button type="submit">Create Song</button>
+           <button type="submit">Edit</button>
         </form>
     </main>
 </body>

@@ -23,13 +23,13 @@ mongoose.connection.on('connected', () => {
 // =============== middleware =================== //
 app.use(morgan('dev'))
 app.use(express.urlencoded({extended: false}))
+app.use(methodOverride('_method'))
 app.use(session({
     secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: true,
     
 }))
-
 
 
 // =============== routes =================== //
