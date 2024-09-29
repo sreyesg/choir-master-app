@@ -21,7 +21,7 @@ router.get('/',async(req,res) => {
 router.get('/new', (req, res) => {
     res.render('repertoire/new.ejs')
 })
-// ============ Create repertoire ========= //
+// ============ Create route ========= //
 router.post('/', async(req, res) => {
     try {
         
@@ -58,7 +58,7 @@ router.get('/:songId/edit', async(req, res) => {
         res.redirect('/')
     } 
 })
-// ======================= edit action ================ //
+// ======================= edit route ================ //
 router.put('/:songId', async(req, res) => {
     try {
         const currentUser = await User.findById(req.session.user._id)
@@ -73,15 +73,21 @@ router.put('/:songId', async(req, res) => {
     }
 })
 
+// ===================== Delete route =================== //
 
-
-
-
-
-
-
-
-
+router.delete('/:songId', async(req, res) => {
+    
+    try {
+        const currentUser = await User.findById(req.session.user._id)
+        currentUser.repertoire.id(req.params.songId).deleteOne()
+        await currentUser.save()
+        res.redirect(`/users/${req.session.user._id}/repertoire`)
+    
+    } catch (error) {
+        console.log(error)
+        res.redirect('/')
+    }
+})
 
 
 

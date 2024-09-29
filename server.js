@@ -35,7 +35,11 @@ app.use(session({
 // =============== routes =================== //
 app.use(passUserToView)
 app.get('/', (req, res) => {
-    res.render('index.ejs')
+    if(req.session.user){
+        res.redirect(`/users/${req.session.user._id}/repertoire`)
+    }else {
+        res.render('index.ejs')
+    }
 })
 app.use('/auth', authController)
 app.use(isSignedIn)

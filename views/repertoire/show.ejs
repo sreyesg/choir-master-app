@@ -16,5 +16,8 @@
         href="/users/<%= user._id %>/repertoire/<%= song._id %>/edit">
         Edit: <%= song.title %>
     </a>
+    <form action="/users/<%= user._id %>/repertoire/<%= song._id %>?_method=DELETE" method="post">
+        <button type="submit">Delete <%= song.title %> </button>
+    </form>
 </body>
 </html>
