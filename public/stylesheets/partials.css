@@ -1,4 +1,13 @@
 /* public/stylesheets/partials.css */
+:root {
+    --main-color: #dda15e;
+    --secondary-color: #fefae0;
+    --third-color: #588157;
+}
+
+/* font-size: var(--font-size); */
+
+
 .navbar {
     display: flex;
     flex-direction: row;
@@ -7,4 +16,19 @@
     align-items: center;
     justify-content: space-between;
 
+}
+#nav-header {
+    font-size: 40px;
+    color: white;
+    /* size: 1em !important; */
+
+}
+.authlinks {
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+
+}
+.authlinks:hover {
+    color: var(--main-color) 
 }

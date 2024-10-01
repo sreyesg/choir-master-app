@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+    --main-color: #dda15e;
+    --secondary-color: #fefae0;
+    --third-color: #588157;
+}
+body {
+    font-family: 'Poppings', sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+}
+.index-body{
+    background-image: url('/assets/golderChoir.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgba(255, 255, 255, 0.5);
+    
+}
+.space{
+    height: 200px;
+}
+.index-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-end;
+    align-items: center;
+}
+#main-header {
+    color: white;
+    font-size: 70px;
+    margin: 0;
+    font-weight: bold;
+}
+#sub-header{
+    color: white;
+    font-size: 20px;
+}
+.auth-links{
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    height: 100px;
+    justify-content: center;
+
+
+}
+.signup-link,
+.signin-link{
+    text-decoration: none;
+    background-color: ;
+}
