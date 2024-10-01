@@ -42,6 +42,7 @@ body {
 #sub-header{
     color: white;
     font-size: 20px;
+    font-weight: bold;
 }
 .auth-links{
     text-decoration: none;
@@ -49,11 +50,26 @@ body {
     flex-direction: row;
     height: 100px;
     justify-content: center;
-
+    
 
 }
 .signup-link,
 .signin-link{
     text-decoration: none;
-    background-color: ;
+    font-size: 1.5em;
+    padding: 8px 0;
+    border-radius: 25px;
+    width: 8em;
+    text-align: center;
+    height: 35px;
+}
+.signup-link{
+    background-color: var(--third-color);
+    color: white;
+    margin: 0 20px 0 0;
+
+}
+.signin-link{
+    background-color: var(--secondary-color);
+    color: black;
 }
