@@ -3,21 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/show.css">
     <title><%= song.title %></title>
 </head>
 <body>
-    <main>
-        <h1><%= song.title %></h1>
-        <p>Category: <%= song.category %></p>
-        <p>Song Book: <%= song.songBook %></p>
-        <p>Page: <%= song.page %></p>
-    </main>
-    <a 
-        href="/users/<%= user._id %>/repertoire/<%= song._id %>/edit">
-        Edit: <%= song.title %>
-    </a>
-    <form action="/users/<%= user._id %>/repertoire/<%= song._id %>?_method=DELETE" method="post">
-        <button type="submit">Delete <%= song.title %> </button>
-    </form>
+    <div class="show-body">
+        <div class="show-header">
+            
+                <h1><%= song.title %></h1>
+                <p>Category: <%= song.category %></p>
+                <p>Song Book: <%= song.songBook %></p>
+                <p>Page: <%= song.page %></p>
+            <div class="show-sidebar">
+                <div class="show-action">
+                    <a 
+                        href="/users/<%= user._id %>/repertoire/<%= song._id %>/edit">
+                        Edit: <%= song.title %>
+                    </a>
+                    <form action="/users/<%= user._id %>/repertoire/<%= song._id %>?_method=DELETE" method="post">
+                        <button type="submit">Delete <%= song.title %> </button>
+                    </form>
+                </div>
+            </div>
+        </div>    
+    </div>
 </body>
 </html>

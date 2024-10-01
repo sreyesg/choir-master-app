@@ -11,6 +11,7 @@ body {
     flex-direction: column;
     height: 100vh;
     width: 100vw;
+    background-color: var(--main-color);
 }
 .index-body{
     background-image: url('/assets/golderChoir.jpg');
@@ -124,10 +125,26 @@ button{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 10px 20px;
-    width: 90%;
-
 }
 .repertoire-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    width: 90%;
+}
 
+.add-song-link {
+    text-decoration: none;
+    padding: 10px;
+    background-color: var(--third-color);
+    color: var(--secondary-color);
+    border-radius: 30px;
+    border: none;
+    font-size: 1.1em;
+}
+.add-song-link:hover{
+    background-color: var(--secondary-color);
+    color: var(--third-color);
 }
