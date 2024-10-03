@@ -38,11 +38,18 @@ router.post('/', async(req, res) => {
 
 // =========== render show page ============== //
 router.get('/:songId', async(req, res) => {
-    const currentUser = await User.findById(req.session.user._id)
-    const song = currentUser.repertoire.id(req.params.songId)
-    res.render('repertoire/show.ejs', {
-        song, 
-    })
+    try {
+        const currentUser = await User.findById(req.session.user._id)
+        const song = currentUser.repertoire.id(req.params.songId)
+        res.render('repertoire/show.ejs', {
+            song, 
+        })
+        
+    } catch (error) {
+        
+        console.log(error)
+        res.redirect('/')
+    }
 })
 
 // =========== send edit form ============== //
