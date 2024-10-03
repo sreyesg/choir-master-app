@@ -1,6 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
+:root {
+  --main-color: #d7b784;
+  --second-color: #fefae0;
+  --third-color: #588157;
+}
 body {
+  font-family: 'Poppings', sans-serif;
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -25,7 +31,7 @@ body {
 }
 .show-header > h1 {
   color: var(--third-color);
-  font-size: 40px;
+  font-size: 45px;
   margin-left: 12px;
   font-weight: bolder;
 }
