@@ -13,7 +13,7 @@ const authController = require('./controllers/auth.js')
 const repertoireController = require('./controllers/repertoire.js')
 const passUserToView = require('./middleware/pass-user-to-view.js')
 const isSignedIn = require('./middleware/is-signed-in.js')
-
+const port = process.env.PORT ? process.env.PORT : '3010';
 
 // =============== Database Connection =================== //
 mongoose.connect(process.env.MONGODB_URI)
@@ -50,6 +50,6 @@ app.use('/users/:userId/repertoire', repertoireController)
 
 
 // =============== app listener =================== //
-app.listen(4001, (req, res) => {
-    console.log('listening on port 4001')
+app.listen(port, (req, res) => {
+    console.log(`listening on port ${port}`)
 })

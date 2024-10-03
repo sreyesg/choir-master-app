@@ -4,7 +4,6 @@ const User = require('../models/user.js')
 
 // =========== render Index ============== //
 router.get('/',async(req,res) => {
-    console.log('made it here')
     try {
         const currentUser = await User.findById(req.session.user._id)
         res.render('repertoire/index.ejs', {
