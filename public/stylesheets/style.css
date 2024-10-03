@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
 :root {
-    --main-color: #5e66dd;
-    --secondary-color: #fefae0;
+    --main-color: #d7b784;
+    --second-color: #fefae0;
     --third-color: #588157;
 }
 body {
@@ -73,7 +73,7 @@ body {
 
 }
 .signin-link{
-    background-color: var(--secondary-color);
+    background-color: var(--second-color);
     color: black;
 }
 .signup-link:hover {
@@ -165,13 +165,13 @@ ul{
     text-decoration: none;
     padding: 10px;
     background-color: var(--third-color);
-    color: var(--secondary-color);
+    color: var(--second-color);
     border-radius: 30px;
     border: none;
     font-size: 1.1em;
 }
 .add-song-link:hover{
-    background-color: var(--secondary-color);
+    background-color: var(--second-color);
     color: var(--third-color);
 }
 

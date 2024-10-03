@@ -1,12 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
-
-:root {
-    --main-color: #dda15e;
-    --secondary-color: #fefae0;
-    --third-color: #588157;
-}
-
 body {
   display: flex;
   flex-direction: column;
@@ -57,12 +50,12 @@ body {
   color: white;
 }
 .show-action > a:hover{
-  background-color: var(--secondary-color);
+  background-color: var(--second-color);
   color: var(--third-color)
 }
 button {
   padding: 8px 10px;
-  background-color: var(--secondary-color);
+  background-color: var(--second-color);
   color: var(--third-color);
   border-radius: 30px;
   border: none;
