@@ -7,13 +7,12 @@
     <title><%= song.title %></title>
 </head>
 <body>
+    <%- include('../partials/navbar.ejs')%>
     <div class="show-body">
         <div class="show-header">
             
                 <h1><%= song.title %></h1>
-                <p>Category: <%= song.category %></p>
-                <p>Song Book: <%= song.songBook %></p>
-                <p>Page: <%= song.page %></p>
+                
             <div class="show-sidebar">
                 <div class="show-action">
                     <a 
@@ -25,6 +24,11 @@
                     </form>
                 </div>
             </div>
+        </div>
+        <div class="show-info">
+            <p>Category: <%= song.category %></p>
+            <p>Song Book: <%= song.songBook %></p>
+            <p>Page: <%= song.page %></p>
         </div>    
     </div>
 </body>
