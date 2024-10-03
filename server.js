@@ -22,6 +22,7 @@ mongoose.connection.on('connected', () => {
 })
 
 // =============== middleware =================== //
+app.set('view engine', 'ejs')
 app.use(morgan('dev'))
 app.use(express.urlencoded({extended: false}))
 app.use(methodOverride('_method'))
@@ -49,6 +50,6 @@ app.use('/users/:userId/repertoire', repertoireController)
 
 
 // =============== app listener =================== //
-app.listen(4000, (req, res) => {
-    console.log('listening on port 4000')
+app.listen(4001, (req, res) => {
+    console.log('listening on port 4001')
 })

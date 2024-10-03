@@ -29,7 +29,7 @@ router.post('/sign-up',async (req, res) => {
     const hashedPassowrd = bcrypt.hashSync(req.body.password, 10)
     req.body.password = hashedPassowrd
     await User.create(req.body)
-    return res.send('/auth/sign-in')
+    return res.render('auth/sign-in.ejs')
 })
 
 

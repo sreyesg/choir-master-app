@@ -11,16 +11,17 @@
     <div class="repertoire-body">
         <div class="repertoire-header">
             <h1>My Repertoire</h1>
-                <%repertoire.forEach((song) => {%>
-                    <ul>
-                        <li>
-                            <a href="/users/<%= user._id %>/repertoire/<%= song._id %>"> <%= song.title %> </a>
-                        </li>
-                    </ul>
-                <%})%>
-                
-                <a class="add-song-link" href="/users/<%= user._id %>/repertoire/new">Add Song</a>
-        </div> 
+            <a class="add-song-link" href="/users/<%= user._id %>/repertoire/new">Add Song</a>
+        </div>
+        
+        <ul>
+            <%repertoire.forEach((song) => {%>
+                <a href="/users/<%= user._id %>/repertoire/<%= song._id %>">
+                    <li > <%= song.title %> </li>
+                </a>
+            <%})%>
+        </ul>
+         
     </div>
 </body>
 </html>

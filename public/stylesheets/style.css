@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
 :root {
-    --main-color: #dda15e;
+    --main-color: #5e66dd;
     --secondary-color: #fefae0;
     --third-color: #588157;
 }
@@ -128,7 +128,7 @@ button{
 }
 .repertoire-header{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
