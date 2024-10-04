@@ -12,7 +12,21 @@ Choir master is a solution to manage church choirs' repertoire. With this applic
 
 ### Attributions
 
+** Libraries:
+* [Express](https://www.npmjs.com/package/express)
+* [Mongoose](https://www.npmjs.com/package/mongoose)
+* [Ejs](https://www.npmjs.com/package/ejs)
+* [Dotenv](https://www.npmjs.com/package/dotenv)
+* [Bcrypt](https://www.npmjs.com/package/bcrypt)
+* [Morgan](https://www.npmjs.com/package/morgan)
+
+** Image: "Golder Choir". 
+Created by: OpenAI.
+date: oct 1st 2024
+
 ### Technologies used
+
+Mongoose, Express, Node, Ejs, JavaScript, Bcrypt, Dotenv. 
 
 ### Next Steps
 * Build up the community feature.
