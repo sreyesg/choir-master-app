@@ -1,14 +1,10 @@
 # Choir Master
 ### Choir repertoire made easy
-
 Choir master is a solution to manage church choirs' repertoire. With this application choir directors can track the collection of pieces that members of choirs are familiar with to planning for services and performances. In addition, choir master will facilitate users to access other choirs music for cross collaboration and adoption of new music.
 
 ![Choir Master](./public/assets/ChoirMasterLanding.png)
 
 ### Getting Started
-
-
-
 [Planning Materials](https://trello.com/b/gtIvFv37/choir-master)
 
 
@@ -28,7 +24,6 @@ Choir master is a solution to manage church choirs' repertoire. With this applic
 
 
 ### Technologies used
-
 Mongoose, Express, Node, Ejs, JavaScript, Bcrypt, Dotenv. 
 
 
