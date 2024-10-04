@@ -19,38 +19,54 @@ router.get('/sign-out',(req, res) => {
 
 // ================= Create user ============== //
 router.post('/sign-up',async (req, res) => {
-    const userInDatabase = await User.findOne({username: req.body.username})
-    if (userInDatabase){
-        return res.send('User already exits, please try a different one')
-    }  
-    if(req.body.password !== req.body.confirmPassword){
-        return res.send('password does not match')
+    
+    try {
+        
+        const userInDatabase = await User.findOne({username: req.body.username})
+        if (userInDatabase){
+            return res.send('User already exits, please try a different one')
+        }  
+        if(req.body.password !== req.body.confirmPassword){
+            return res.send('password does not match')
+        }
+        const hashedPassowrd = bcrypt.hashSync(req.body.password, 10)
+        req.body.password = hashedPassowrd
+        await User.create(req.body)
+        return res.render('auth/sign-in.ejs')
+
+
+    } catch (error) {
+
+        console.log(error)
+        res.redirect('/')
     }
-    const hashedPassowrd = bcrypt.hashSync(req.body.password, 10)
-    req.body.password = hashedPassowrd
-    await User.create(req.body)
-    return res.render('auth/sign-in.ejs')
 })
 
 
 
 // ================ sign-in user =============== //
 router.post('/sign-in', async(req, res) => {
-    const userInDatabase = await User.findOne({username: req.body.username})
-    
-    if(!userInDatabase){
-        return res.send('Login failed, try it again')
+    try {
+        
+        const userInDatabase = await User.findOne({username: req.body.username})
+        if(!userInDatabase){
+            return res.send('Login failed, try it again')
+        }
+        const validPassword = bcrypt.compareSync(req.body.password, userInDatabase.password)
+        if(!validPassword){
+            return res.send('Login failed, try it again')
+        }
+        req.session.user = {
+            username: userInDatabase.username,
+            _id: userInDatabase._id,
+        }
+
+        res.redirect('/')
+
+    } catch (error) {
+        console.log(error)
+        res.redirect('/')
     }
-    const validPassword = bcrypt.compareSync(req.body.password, userInDatabase.password)
-    if(!validPassword){
-        return res.send('Login failed, try it again')
-    }
-    req.session.user = {
-        username: userInDatabase.username,
-        _id: userInDatabase._id,
-    }
-    
-    res.redirect('/')
 })
 
 
