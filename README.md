@@ -5,6 +5,9 @@ Choir master is a solution to manage church choirs' repertoire. With this applic
 ![Choir Master](./public/assets/ChoirMasterLanding.png)
 
 ### Getting Started
+
+[try Choir Master](https://choir-master-app-6a76e7e7a3f3.herokuapp.com/)
+
 [Planning Materials](https://trello.com/b/gtIvFv37/choir-master)
 
 
